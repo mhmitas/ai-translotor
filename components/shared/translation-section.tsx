@@ -48,7 +48,7 @@ const TranslationSection = () => {
 
       const translatedHtml = await markdownToHtml(result);
       setParsedHtml(translatedHtml);
-    } catch (error) {
+    } catch {
       toast("Translation failed");
     } finally {
       setIsTranslating(false);

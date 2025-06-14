@@ -37,10 +37,8 @@ export async function translateText({
         });
 
         const response = await model.invoke(prompt);
-        console.log(response.content)
         return JSON.parse(JSON.stringify(response.content));
-    } catch (error: any) {
-        console.error(error);
-        throw new Error(error?.messages || 'Failed to generate prompt');
+    } catch {
+        throw new Error('Failed to generate prompt');
     }
 }
